@@ -1,0 +1,445 @@
+/* Desktop Version */
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #222222;
+}
+
+/* global======================= */
+:root {
+    font-size: 62.5%;
+    font-family: 'Roboto Slab', serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+header,
+main section.slogan a,
+.project-info .project-address,
+section.tech p,
+.locations p,
+footer {
+
+    font-family: 'Open Sans', sans-serif;
+}
+header div.logo .logo-text h1 {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+/* Header ==================== */
+
+header {
+    padding: 3.8rem 18vw;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 9;
+    position: relative;
+    
+}
+
+header div.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header div.logo .logo-text {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+}
+header div.logo .logo-text h1 {
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+
+header div.logo .logo-text p {
+    font-size: 1.4rem;
+    color: #888;
+}
+
+nav.menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav.menu > ul > li {
+    margin-left: 4rem;
+}
+
+
+nav.menu ul li a {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #6b6b6b;
+    transition: .15s;
+}
+
+nav.menu ul li:hover > a{
+    color: inherit;
+}
+
+nav.menu ul li a.active {
+    font-weight: bold;
+    color: inherit;
+}
+nav.menu ul li {
+    position: relative;
+}
+
+
+nav.menu ul li:hover .dropdown,
+nav.menu ul li:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+nav.menu ul li .dropdown {
+    margin-top: 10px;
+    position: absolute;
+    left: -100%;
+    padding: 1rem 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.301);
+    
+    
+    /* transition */
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .15s;
+}
+
+nav.menu ul li .dropdown li {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+   
+
+    transition: color .05s, background-color .4s, border .4s;
+}
+nav.menu ul li .dropdown li:hover {
+    background-color: #4b4b4b38;
+}
+
+nav.menu ul li .dropdown li a {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 6rem 1rem 2rem;
+    border-left: 4px solid transparent;
+    margin-left: -4px;
+}
+nav.menu ul li .dropdown li:hover a {
+    border-left: 4px solid #005a87;
+}
+
+/*main =============================*/
+main section,
+section.tech .text-container {
+    padding: 0 17vw;
+    margin: 0 17.5vw;
+    z-index: 1;
+}
+/* section 1 - Slogan ======= */
+
+main section.slogan {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("./../images/header-bg.jpg");
+    height: 528px;
+    width: 100%;
+    background-repeat: no-repeat;
+    filter: contrast(1.18);
+    background-size: cover;
+}
+
+main section.slogan h2 {
+    font-size: 4.2rem;
+    width: 70%;
+    text-align: center;
+    color: #002856;;
+}
+
+main section.slogan a {
+    background-color: #002856;
+    color: white;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 5rem;
+
+    border-radius: 3rem;
+    transition: background .2s;
+}
+
+
+main section.slogan a:hover {
+    text-decoration: underline;
+    background-color: #084080;
+}
+
+/* Section 2 - Links */
+
+section.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 12rem 8rem;
+    border-bottom: 1px solid rgba(104, 104, 104, 0.219);
+}
+
+section.links a {
+    font-size: 1.9rem;
+}
+
+/* Section 3 - Projects*/
+
+section.projects {
+    margin: 0;
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.7rem;
+    height: max-content;
+    overflow: hidden;
+}
+
+.projects .project {
+    padding-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    transition: .2s;
+}
+
+.projects .project:hover{
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.178);
+}
+.projects .project img {
+    width: 100%;
+    height: 270px;
+    object-fit: fill;
+}
+
+.projects .project .project-info {
+    padding: 2rem 3rem;
+}
+
+.project-info .project-name {
+    font-size: 2.2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    display: block;
+}
+
+
+.project-info .project-address {
+    display: block;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    color: #3b3b3bb2;
+}
+
+.project-info .project-address span {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/* section 4 - tech*/
+
+section.tech {
+    margin: 0;
+    padding: 0;
+    background: url("./../images/skyscrupers.jpg") no-repeat  right;
+    background-position: 100% ;
+    /* margin-left: -50vw; */
+    /* position: relative; */
+    /* left: 50%; */
+    background-size: cover;
+    background-clip: padding-box;
+
+    max-width: 100vw;
+    width: 100%;
+    height: 610px;
+
+    /* filter: opacity(.4); */
+}
+
+section.tech .text-container {
+    margin: 0;
+    z-index: initial;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.521);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+section.tech h1,
+section.tech p {
+    width: 50%;
+    /* color: black; */
+    
+}
+
+section.tech h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #002856;
+    padding-bottom: 2rem;
+}
+section.tech p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #6b6b6b;
+}
+
+/* locations */
+
+section.locations {
+    margin: 0;
+    padding: 9.6rem 4rem;
+}
+.locations h1 {
+    font-size: 3.2rem;
+    text-align: center;
+}
+.locations > p {
+    text-align: center;
+    width: 48%;
+    margin: 0 auto;
+    font-size: 1.65rem;
+    padding-top: 2rem;
+    color: #6b6b6b;
+}
+
+section.locations .locations-container {
+    padding: 10rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.locations .locations-container .location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.location {
+    margin-top: 4rem;
+}
+.location:hover .icon {
+    border: 2px solid #002856;
+    box-shadow: none;
+}
+.location .icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.281);
+    border-radius: 50%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transition: ease-in-out .2s;
+}
+.location .icon i {
+    font-size: 2.5rem;
+    color: #002856;
+}
+
+.location .location-name {
+    margin: 3rem 0 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.location .location-info {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #6b6b6b;
+}
+
+/* footer */
+
+footer {
+    height: 300px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+footer .links {
+    margin-bottom: 2rem;
+
+}
+footer .links a {
+    padding: 2rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: .5rem;
+    font-size: 1.4rem;
+    color:#6b6b6b;
+    font-weight: 400;
+    
+}
+
+/* back to top */
+
+.back-to {
+    position:fixed;
+    bottom: 40px;
+    width: 4rem;
+    height: 4rem;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    right: 40px;
+    z-index: 10;
+    font-size: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #4e4e4e41;
+    background-color: white;
+}
